@@ -24,6 +24,5 @@ fig2 = px.pie(pie_df,values="GDP",names="Continent")
 
 image_path = 'assets/MMU-Logo.jpg'
 
-
 if __name__ == '__main__':
     app.run(debug=True)
