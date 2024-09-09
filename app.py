@@ -22,7 +22,6 @@ mylabels = ["Asia", "Africa", "America", "Europe","Oceania"]
 pie_df = {'Continent': mylabels,'GDP': pie_data}
 fig2 = px.pie(pie_df,values="GDP",names="Continent")
 
-
 image_path = 'assets/MMU-Logo.jpg'
 
 app.layout = [html.H1('MCM7183 Exercise 3 by Ameer'), html.Img(src=image_path), dcc.Graph(figure=fig), dcc.Graph(figure=fig2)]
