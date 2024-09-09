@@ -25,10 +25,14 @@ fig2 = px.pie(pie_df,values="GDP",names="Continent")
 image_path = 'assets/MMU-Logo.jpg'
 
 app.layout = [html.H1('MCM7183 Exercise 3 by Ameer'),
- 	html.Img(src=image_path),
-	dcc.Dropdown(['Malaysia', 'Japan', 'China'],'Malaysia' id='dropdown-country'),
-	dcc.Graph(figure=fig),
- 	dcc.Graph(figure=fig2)]
+ 		html.Img(src=image_path),
+		dcc.Dropdown(['Malaysia', 'Japan', 'China'],'Malaysia' id='dropdown-country'),
+		dcc.Graph(figure=fig),
+ 		dcc.Graph(figure=fig2)]
+
+@callback(
+	Output('graph-scatter','figure'),
+	Input(dropdown-country','value')
 
 if __name__ == '__main__':
     app.run(debug=True)
