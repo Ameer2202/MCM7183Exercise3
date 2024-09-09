@@ -2,4 +2,6 @@ dash
 numpy
 pandas
 plotly
+json
+geopandas
 gunicorn
