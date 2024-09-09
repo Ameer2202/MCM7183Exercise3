@@ -22,6 +22,13 @@ mylabels = ["Asia", "Africa", "America", "Europe","Oceania"]
 pie_df = {'Continent': mylabels,'GDP': pie_data}
 fig2 = px.pie(pie_df,values="GDP",names="Continent")
 
+states = gpd.read_file ("/kaggle/input/malaysia-states-geojson/malaysia_state.geojson")
+states_json = json.load(open("/kaggle/input/malaysia-states-geojson/malaysia_state.geojson","r"))
+states_json['features'][15]['properties']['name']
+state_color = ['#000', "#111",'#222', '#333', '#444', '#555', '#666', '#777', '#888', '#999', '#aaa', '#bbb', '#ccc', '#ddd', '#eee', '#fff']
+state_color.reverse()
+states.plot(color=state_color)
+
 image_path = 'assets/MMU-Logo.jpg'
 
 app.layout = [html.H1('MCM7183 Exercise 3 by Ameer'), html.Img(src=image_path), dcc.Graph(figure=fig), dcc.Graph(figure=fig2)]
